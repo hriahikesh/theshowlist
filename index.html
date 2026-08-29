@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Show List | Film Production</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+      <a href="#" class="header__logo">THE SHOW LIST</a>
+      <nav class="header__nav" id="mainNav">
+        <a href="#home" class="header__link active">Home</a>
+        <a href="#projects" class="header__link">Projects</a>
+        <a href="#about" class="header__link">About</a>
+        <a href="#crew" class="header__link">Crew</a>
+        <a href="#contact" class="header__link">Contact</a>
+      </nav>
+      <button class="header__menu" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <nav class="mobile-nav__links">
+      <a href="#home" class="mobile-nav__link">Home</a>
+      <a href="#projects" class="mobile-nav__link">Projects</a>
+      <a href="#about" class="mobile-nav__link">About</a>
+      <a href="#crew" class="mobile-nav__link">Crew</a>
+      <a href="#contact" class="mobile-nav__link">Contact</a>
+    </nav>
+  </div>
+
+  <!-- Hero Section - Video Background -->
+  <section class="hero" id="home">
+    <div class="hero__video-wrap">
+      <video autoplay muted loop playsinline class="hero__video">
+        <source src="videos/hero/hero-bg.mp4" type="video/mp4">
+      </video>
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__content container">
+      <p class="hero__tagline">Film Production & Content Creation</p>
+      <h1 class="hero__title">
+        <span class="hero__title-line">Every frame</span>
+        <span class="hero__title-line">tells a <em>story</em></span>
+      </h1>
+      <p class="hero__subtitle">We craft visual experiences that stay with you long after the screen goes dark.</p>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">
+          View Our Work
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Showreel Section - Video Playing -->
+  <section class="showreel" id="showreel">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Showreel</span>
+        <h2 class="section-header__title">Our Latest Work</h2>
+      </div>
+      <div class="showreel__video-wrap">
+        <video autoplay muted loop playsinline class="showreel__video">
+          <source src="videos/showreel/showreel.mp4" type="video/mp4">
+        </video>
+        <div class="showreel__overlay">
+          <div class="showreel__play-btn">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="38" stroke="white" stroke-width="2"/>
+              <polygon points="32,22 32,58 60,40" fill="white"/>
+            </svg>
+          </div>
+          <div class="showreel__info">
+            <span class="showreel__year">2024</span>
+            <span class="showreel__divider">|</span>
+            <span class="showreel__desc">A collection of our finest moments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section - Videos Playing -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Portfolio</span>
+        <h2 class="section-header__title">Selected Projects</h2>
+      </div>
+      <div class="projects__grid">
+        
+        <!-- Project 1 - Large -->
+        <div class="project-card project-card--large">
+          <video autoplay muted loop playsinline class="project-card__video">
+            <source src="videos/projects/project-1.mp4" type="video/mp4">
+          </video>
+          <div class="project-card__overlay">
+            <span class="project-card__cat">Commercial</span>
+            <h3 class="project-card__title">Beyond the Frame</h3>
+            <p class="project-card__desc">A journey through visual storytelling</p>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <video autoplay muted loop playsinline class="project-card__video">
+            <source src="videos/projects/project-2.mp4" type="video/mp4">
+          </video>
+          <div class="project-card__overlay">
+            <span class="project-card__cat">Music Video</span>
+            <h3 class="project-card__title">Midnight Express</h3>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <video autoplay muted loop playsinline class="project-card__video">
+            <source src="videos/projects/project-3.mp4" type="video/mp4">
+          </video>
+          <div class="project-card__overlay">
+            <span class="project-card__cat">Documentary</span>
+            <h3 class="project-card__title">Urban Stories</h3>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <video autoplay muted loop playsinline class="project-card__video">
+            <source src="videos/projects/project-4.mp4" type="video/mp4">
+          </video>
+          <div class="project-card__overlay">
+            <span class="project-card__cat">Short Film</span>
+            <h3 class="project-card__title">Silent Voices</h3>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <video autoplay muted loop playsinline class="project-card__video">
+            <source src="videos/projects/project-5.mp4" type="video/mp4">
+          </video>
+          <div class="project-card__overlay">
+            <span class="project-card__cat">Brand Film</span>
+            <h3 class="project-card__title">Golden Hour</h3>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__visual">
+          <div class="about__video-wrap">
+            <video autoplay muted loop playsinline class="about__video">
+              <source src="videos/projects/project-3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="about__experience">
+            <span class="about__exp-number">10+</span>
+            <span class="about__exp-text">Years of Excellence</span>
+          </div>
+        </div>
+        <div class="about__content">
+          <span class="section-header__label">About Us</span>
+          <h2 class="about__title">The Story Behind<br>the Lens</h2>
+          <p class="about__text">
+            We are a collective of filmmakers, editors, and visual storytellers 
+            who believe in the power of cinema to move people. Based in Mumbai, 
+            we've spent years perfecting the art of visual narrative.
+          </p>
+          <p class="about__text">
+            From concept to screen, we handle every aspect of production with 
+            meticulous attention to detail. Our work spans commercials, music 
+            videos, documentaries, and brand films.
+          </p>
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-num">75+</span>
+              <span class="about__stat-label">Projects</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num">50+</span>
+              <span class="about__stat-label">Clients</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num">15+</span>
+              <span class="about__stat-label">Awards</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crew Section - The Show List Crew -->
+  <section class="crew" id="crew">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">The Show List Crew</span>
+        <h2 class="section-header__title">The People Behind<br>the Camera</h2>
+      </div>
+
+      <!-- Crew Grid - Images Come One by One -->
+      <div class="crew__grid">
+        
+        <div class="crew-card" data-member="1" data-delay="0">
+          <div class="crew-card__img-wrap">
+            <img src="images/crew-1.jpg" alt="Crew Member" class="crew-card__img">
+            <div class="crew-card__name-reveal">
+              <span class="crew-card__name">Arjun Mehta</span>
+              <span class="crew-card__role-tag">Director</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="crew-card" data-member="2" data-delay="1">
+          <div class="crew-card__img-wrap">
+            <img src="images/crew-2.jpg" alt="Crew Member" class="crew-card__img">
+            <div class="crew-card__name-reveal">
+              <span class="crew-card__name">Priya Sharma</span>
+              <span class="crew-card__role-tag">Cinematographer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="crew-card" data-member="3" data-delay="2">
+          <div class="crew-card__img-wrap">
+            <img src="images/crew-3.jpg" alt="Crew Member" class="crew-card__img">
+            <div class="crew-card__name-reveal">
+              <span class="crew-card__name">Rohit Kumar</span>
+              <span class="crew-card__role-tag">Editor</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="crew-card" data-member="4" data-delay="3">
+          <div class="crew-card__img-wrap">
+            <img src="images/crew-4.jpg" alt="Crew Member" class="crew-card__img">
+            <div class="crew-card__name-reveal">
+              <span class="crew-card__name">Neha Patel</span>
+              <span class="crew-card__role-tag">Color Artist</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="crew-card" data-member="5" data-delay="4">
+          <div class="crew-card__img-wrap">
+            <img src="images/crew-5.jpg" alt="Crew Member" class="crew-card__img">
+            <div class="crew-card__name-reveal">
+              <span class="crew-card__name">Vikram Singh</span>
+              <span class="crew-card__role-tag">Producer</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="crew__hint">Click on a photo to learn more</p>
+    </div>
+  </section>
+
+  <!-- Crew Modal -->
+  <div class="crew-modal" id="crewModal">
+    <div class="crew-modal__content">
+      <button class="crew-modal__close" aria-label="Close">&times;</button>
+      <div class="crew-modal__body">
+        <div class="crew-modal__img-wrap">
+          <img src="" alt="" class="crew-modal__img" id="modalImg">
+        </div>
+        <div class="crew-modal__info">
+          <h3 class="crew-modal__name" id="modalName"></h3>
+          <p class="crew-modal__role" id="modalRole"></p>
+          <p class="crew-modal__bio" id="modalBio"></p>
+          <div class="crew-modal__credits">
+            <h4>Notable Works</h4>
+            <ul id="modalCredits"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Clients -->
+  <section class="clients">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-header__label">Clients</span>
+        <h2 class="section-header__title">Trusted By</h2>
+      </div>
+      <div class="clients__marquee">
+        <div class="clients__track">
+          <span class="clients__logo">NIKE</span>
+          <span class="clients__logo">APPLE</span>
+          <span class="clients__logo">SAMSUNG</span>
+          <span class="clients__logo">COCA-COLA</span>
+          <span class="clients__logo">SPOTIFY</span>
+          <span class="clients__logo">NETFLIX</span>
+          <span class="clients__logo">NIKE</span>
+          <span class="clients__logo">APPLE</span>
+          <span class="clients__logo">SAMSUNG</span>
+          <span class="clients__logo">COCA-COLA</span>
+          <span class="clients__logo">SPOTIFY</span>
+          <span class="clients__logo">NETFLIX</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__info">
+          <span class="section-header__label">Get in Touch</span>
+          <h2 class="contact__title">Let's Create<br>Something Together</h2>
+          <p class="contact__text">Have a project in mind? We'd love to hear about it.</p>
+          <a href="mailto:hello@theshowlist.com" class="contact__email">hello@theshowlist.com</a>
+          <div class="contact__socials">
+            <a href="#" class="contact__social" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="5"/>
+                <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="YouTube">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/>
+                <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="currentColor" stroke="none"/>
+              </svg>
+            </a>
+            <a href="#" class="contact__social" aria-label="Vimeo">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.977 6.416c-.105 2.338-1.739 5.543-4.894 9.609-3.268 4.247-6.026 6.37-8.29 6.37-1.409 0-2.578-1.294-3.553-3.881L5.322 11.4C4.603 8.816 3.834 7.522 3.01 7.522c-.179 0-.806.378-1.881 1.132L0 7.197c1.185-1.044 2.351-2.084 3.501-3.128C5.08 2.701 6.266 1.984 7.055 1.91c1.867-.18 3.016 1.1 3.447 3.838.465 2.953.789 4.789.971 5.507.539 2.45 1.131 3.674 1.776 3.674.502 0 1.256-.796 2.265-2.385 1.004-1.589 1.54-2.797 1.612-3.628.144-1.371-.395-2.061-1.614-2.061-.574 0-1.167.121-1.777.391 1.186-3.868 3.434-5.757 6.762-5.637 2.473.06 3.628 1.664 3.493 4.797l-.013.012z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="contact__form-wrap">
+          <form class="contact__form" id="contactForm">
+            <div class="form-field">
+              <input type="text" id="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-field">
+              <input type="email" id="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-field">
+              <textarea id="message" placeholder="Tell us about your project" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Send Message
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <a href="#" class="footer__logo">THE SHOW LIST</a>
+        <p class="footer__copy">&copy; 2024 The Show List. All rights reserved.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
