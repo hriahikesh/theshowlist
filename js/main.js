@@ -87,7 +87,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   const message = document.getElementById('message').value;
   
   // Your WhatsApp number (replace with your actual number)
-  const whatsappNumber = '919999999999';
+  const whatsappNumber = '919934401081';
   
   // Create WhatsApp message
   const whatsappMessage = `Hi, I'm ${name}.\n\nPhone: ${phone}\n\nMessage: ${message}`;
