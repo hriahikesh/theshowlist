@@ -1362,6 +1362,23 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
   min-height: 130px;
 }
 
+.form-status {
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+  color: var(--text-muted);
+  min-height: 1.2em;
+}
+
+.form-status.is-success {
+  color: var(--accent);
+}
+
+.form-status.is-error {
+  color: #ff8a8a;
+}
+
 /* ===========================
    FOOTER
    =========================== */

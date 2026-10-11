@@ -216,12 +216,14 @@ function initWorkCards() {
 }
 
 // ===========================
-// Contact Form (mailto -> tshowlist@gmail.com)
+// Contact Form (FormSubmit AJAX -> tshowlist@gmail.com)
 // ===========================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-  contactForm.addEventListener('submit', function (e) {
+  const statusEl = document.getElementById('formStatus');
+
+  contactForm.addEventListener('submit', async function (e) {
     e.preventDefault();
 
     const name = document.getElementById('name').value.trim();
@@ -230,24 +232,61 @@ if (contactForm) {
 
     if (!name || !email || !message) return;
 
-    const subject = encodeURIComponent(`New enquiry from ${name}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-    );
-
-    window.location.href =
-      `mailto:tshowlist@gmail.com?subject=${subject}&body=${body}`;
-
     const btn = this.querySelector('button');
     const originalText = btn.innerHTML;
-    btn.innerHTML = 'Opening your email app...';
+    btn.innerHTML = 'Sending...';
     btn.disabled = true;
+    if (statusEl) {
+      statusEl.textContent = '';
+      statusEl.className = 'form-status';
+    }
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/tshowlist@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `New enquiry from ${name}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+
+      if (!res.ok) throw new Error('Request failed');
+      const data = await res.json();
+      if (String(data.success) !== 'true') throw new Error(data.message || 'Failed');
+
+      contactForm.reset();
+      btn.innerHTML = 'Message Sent';
+      if (statusEl) {
+        statusEl.textContent = "Thanks! Your message has been sent. We'll be in touch shortly.";
+        statusEl.classList.add('is-success');
+      }
+
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }, 4000);
+    } catch (err) {
+      // Fallback: open the visitor's email app so the message isn't lost
+      const subject = encodeURIComponent(`New enquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href =
+        `mailto:tshowlist@gmail.com?subject=${subject}&body=${body}`;
+
       btn.innerHTML = originalText;
       btn.disabled = false;
-      contactForm.reset();
-    }, 2500);
+      if (statusEl) {
+        statusEl.textContent = 'Opening your email app as a backup...';
+        statusEl.classList.add('is-error');
+      }
+    }
   });
 }
 
