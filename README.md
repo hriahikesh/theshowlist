@@ -5,12 +5,11 @@ Film Production & Content Creation Website
 🔗 **Live Site:** [theshowlist.in](https://theshowlist.in)
 
 ## Sections
-- Hero with video background
-- Showreel
-- Projects with video previews
+- Hero with animated letter-drop headline
+- Work / Selected Projects (click to play in lightbox)
 - About
-- The Show List Crew
-- Contact
+- Clients ("Trusted By")
+- Contact (email + WhatsApp)
 
 ## Tech Stack
 - HTML5

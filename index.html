@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Show List | Film Production</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Doto:wght@400;600;700;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,10 +15,12 @@
   <!-- Header -->
   <header class="header" id="header">
     <div class="header__inner container">
-      <a href="#" class="header__logo">THE SHOW LIST</a>
+      <a href="#home" class="header__logo" aria-label="The Show List — home">
+        <img src="images/logo.png" alt="The Show List" class="header__logo-img">
+      </a>
       <nav class="header__nav" id="mainNav">
         <a href="#home" class="header__link active">Home</a>
-        <a href="#showreel" class="header__link">Showreel</a>
+        <a href="#projects" class="header__link">Work</a>
         <a href="#about" class="header__link">About</a>
         <a href="#contact" class="header__link">Contact</a>
       </nav>
@@ -31,7 +34,7 @@
   <div class="mobile-nav" id="mobileNav">
     <nav class="mobile-nav__links">
       <a href="#home" class="mobile-nav__link">Home</a>
-      <a href="#showreel" class="mobile-nav__link">Showreel</a>
+      <a href="#projects" class="mobile-nav__link">Work</a>
       <a href="#about" class="mobile-nav__link">About</a>
       <a href="#contact" class="mobile-nav__link">Contact</a>
     </nav>
@@ -46,18 +49,12 @@
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content container">
-      <p class="hero__tagline">Film Production & Content Creation</p>
       <h1 class="hero__title">
-        <span class="hero__title-line">Every frame</span>
-        <span class="hero__title-line">tells a <em>story</em></span>
+        <span class="hero__title-line drop" data-drop="1">Every frame</span>
+        <span class="hero__title-line drop" data-drop="2">tells a <em>story</em></span>
       </h1>
-      <p class="hero__subtitle">We craft visual experiences that stay with you long after the screen goes dark.</p>
       <div class="hero__actions">
-        <a href="#projects" class="btn btn--primary">
-          View Our Work
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-        <a href="#contact" class="btn btn--outline">Get in Touch</a>
+        <a href="#contact" class="btn btn--primary">Get in Touch</a>
       </div>
     </div>
     <div class="hero__scroll">
@@ -66,30 +63,92 @@
     </div>
   </section>
 
-  <!-- Showreel Section - Video Playing -->
-  <section class="showreel" id="showreel">
+  <!-- Work Section - Categories -->
+  <section class="work" id="projects">
     <div class="container">
       <div class="section-header">
-        <span class="section-header__label">Showreel</span>
-        <h2 class="section-header__title">Our Latest Work</h2>
+        <span class="section-header__label">Our Work</span>
+        <h2 class="section-header__title">What We Do</h2>
+        <p class="section-header__note">Hover to preview. Click a category to explore the films.</p>
       </div>
-      <div class="showreel__video-wrap">
-        <video autoplay muted loop playsinline class="showreel__video">
-          <source src="videos/showreel/showreel.mp4" type="video/mp4">
-        </video>
-        <div class="showreel__overlay">
-          <div class="showreel__play-btn">
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-              <circle cx="40" cy="40" r="38" stroke="white" stroke-width="2"/>
-              <polygon points="32,22 32,58 60,40" fill="white"/>
-            </svg>
+      <div class="work__grid">
+        <article class="work-card" data-category="music-videos">
+          <video class="work-card__video" muted loop playsinline preload="none"
+                 poster="videos/work/music-videos/poster.jpg"
+                 data-src="videos/work/music-videos/preview.mp4"></video>
+          <div class="work-card__overlay">
+            <span class="work-card__cat drop">Music Videos</span>
+            <span class="work-card__count">2 films</span>
           </div>
-          <div class="showreel__info">
-            <span class="showreel__year">2024</span>
-            <span class="showreel__divider">|</span>
-            <span class="showreel__desc">A collection of our finest moments</span>
+          <span class="work-card__play" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+        </article>
+
+        <article class="work-card" data-category="ads-tvc">
+          <video class="work-card__video" muted loop playsinline preload="none"
+                 poster="videos/work/ads-tvc/poster.jpg"
+                 data-src="videos/work/ads-tvc/preview.mp4"></video>
+          <div class="work-card__overlay">
+            <span class="work-card__cat drop">Ads &amp; TVC</span>
+            <span class="work-card__count">1 film</span>
           </div>
-        </div>
+          <span class="work-card__play" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+        </article>
+
+        <article class="work-card" data-category="short-films">
+          <video class="work-card__video" muted loop playsinline preload="none"
+                 poster="videos/work/short-films/poster.jpg"
+                 data-src="videos/work/short-films/preview.mp4"></video>
+          <div class="work-card__overlay">
+            <span class="work-card__cat drop">Short Films</span>
+            <span class="work-card__count">2 films</span>
+          </div>
+          <span class="work-card__play" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+        </article>
+
+        <article class="work-card" data-category="concerts">
+          <video class="work-card__video" muted loop playsinline preload="none"
+                 poster="videos/work/concerts/poster.jpg"
+                 data-src="videos/work/concerts/preview.mp4"></video>
+          <div class="work-card__overlay">
+            <span class="work-card__cat drop">Concerts</span>
+            <span class="work-card__count">2 films</span>
+          </div>
+          <span class="work-card__play" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+        </article>
+
+        <article class="work-card" data-category="brand-films">
+          <video class="work-card__video" muted loop playsinline preload="none"
+                 poster="videos/work/brand-films/poster.jpg"
+                 data-src="videos/work/brand-films/preview.mp4"></video>
+          <div class="work-card__overlay">
+            <span class="work-card__cat drop">Brand Films</span>
+            <span class="work-card__count">2 films</span>
+          </div>
+          <span class="work-card__play" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+        </article>
+
+        <article class="work-card" data-category="corporate-films">
+          <video class="work-card__video" muted loop playsinline preload="none"
+                 poster="videos/work/corporate-films/poster.jpg"
+                 data-src="videos/work/corporate-films/preview.mp4"></video>
+          <div class="work-card__overlay">
+            <span class="work-card__cat drop">Corporate Films</span>
+            <span class="work-card__count">3 films</span>
+          </div>
+          <span class="work-card__play" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          </span>
+        </article>
       </div>
     </div>
   </section>
@@ -101,7 +160,7 @@
         <div class="about__visual">
           <div class="about__video-wrap">
             <video autoplay muted loop playsinline class="about__video">
-              <source src="videos/projects/project-3.mp4" type="video/mp4">
+              <source src="videos/about/preview.mp4" type="video/mp4">
             </video>
           </div>
         </div>
@@ -110,8 +169,8 @@
           <h2 class="about__title">The Story Behind<br>the Lens</h2>
           <p class="about__text">
             We are a collective of filmmakers, editors, and visual storytellers 
-            who believe in the power of cinema to move people. Based in Mumbai, 
-            we've spent years perfecting the art of visual narrative.
+            who believe in the power of cinema to move people. I woke up with a 
+            dream — to capture your story in my lens.
           </p>
           <p class="about__text">
             From concept to screen, we handle every aspect of production with 
@@ -136,18 +195,16 @@
       </div>
       <div class="clients__marquee">
         <div class="clients__track">
-          <span class="clients__logo">NIKE</span>
-          <span class="clients__logo">APPLE</span>
-          <span class="clients__logo">SAMSUNG</span>
-          <span class="clients__logo">COCA-COLA</span>
-          <span class="clients__logo">SPOTIFY</span>
-          <span class="clients__logo">NETFLIX</span>
-          <span class="clients__logo">NIKE</span>
-          <span class="clients__logo">APPLE</span>
-          <span class="clients__logo">SAMSUNG</span>
-          <span class="clients__logo">COCA-COLA</span>
-          <span class="clients__logo">SPOTIFY</span>
-          <span class="clients__logo">NETFLIX</span>
+          <span class="clients__logo">ZOMATO</span>
+          <span class="clients__logo">BLINKIT</span>
+          <span class="clients__logo">ZEPTO</span>
+          <span class="clients__logo">TATA IPL</span>
+          <span class="clients__logo">SONY</span>
+          <span class="clients__logo">ZOMATO</span>
+          <span class="clients__logo">BLINKIT</span>
+          <span class="clients__logo">ZEPTO</span>
+          <span class="clients__logo">TATA IPL</span>
+          <span class="clients__logo">SONY</span>
         </div>
       </div>
     </div>
@@ -161,22 +218,22 @@
           <span class="section-header__label">Get in Touch</span>
           <h2 class="contact__title">Let's Create<br>Something Together</h2>
           <p class="contact__text">Have a project in mind? We'd love to hear about it. Reach out via email or WhatsApp.</p>
-          <a href="mailto:hello@theshowlist.in" class="contact__email">hello@theshowlist.in</a>
-          <a href="https://wa.me/919934401081" target="_blank" class="btn btn--whatsapp">
+          <a href="mailto:tshowlist@gmail.com" class="contact__email">tshowlist@gmail.com</a>
+          <a href="https://wa.me/919958138646" target="_blank" class="btn btn--whatsapp">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
             Say Hi on WhatsApp
           </a>
           <div class="contact__socials">
-            <a href="#" class="contact__social" aria-label="Instagram">
+            <a href="https://www.instagram.com/theshowlistfilms?xtok=MTJ6d2Y5ZjN5cGViZw%3D%3D&utm_source=qr" target="_blank" class="contact__social" aria-label="Instagram">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <rect x="2" y="2" width="20" height="20" rx="5"/>
                 <circle cx="12" cy="12" r="5"/>
                 <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
               </svg>
             </a>
-            <a href="#" class="contact__social" aria-label="YouTube">
+            <a href="https://www.youtube.com/@theshowlist1" target="_blank" class="contact__social" aria-label="YouTube">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                 <path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/>
                 <polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="currentColor" stroke="none"/>
@@ -187,13 +244,13 @@
         <div class="contact__form-wrap">
           <form class="contact__form" id="contactForm">
             <div class="form-field">
-              <input type="text" id="name" placeholder="Your Name" required>
+              <input type="text" id="name" name="name" placeholder="Your Name" required>
             </div>
             <div class="form-field">
-              <input type="email" id="email" placeholder="Your Email" required>
+              <input type="email" id="email" name="email" placeholder="Your Email" required>
             </div>
             <div class="form-field">
-              <textarea id="message" placeholder="Tell us about your project" rows="5" required></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your project" rows="5" required></textarea>
             </div>
             <button type="submit" class="btn btn--primary btn--full">
               Send Message
@@ -209,17 +266,23 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__left">
-        <a href="#" class="footer__logo">THE SHOW LIST</a>
+        <a href="#home" class="footer__logo" aria-label="The Show List — home">
+          <img src="images/logo.png" alt="The Show List" class="footer__logo-img">
+        </a>
         <p class="footer__copy">&copy; 2024 The Show List. All rights reserved.</p>
-      </div>
-      <div class="footer__links">
-        <a href="#home">Home</a>
-        <a href="#showreel">Showreel</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
       </div>
     </div>
   </footer>
+
+  <!-- Project Lightbox -->
+  <div class="lightbox" id="projectLightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <div class="lightbox__body">
+      <video id="lightboxVideo" controls playsinline preload="none"></video>
+      <p class="lightbox__title" id="lightboxTitle"></p>
+      <div class="lightbox__playlist" id="lightboxPlaylist"></div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
